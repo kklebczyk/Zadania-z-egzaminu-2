@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl10.css"/>
+    <title>Fabryka cukierkow</title>
+    <script>
+        function wypisz() {
+            const nrksztaltu = document.getElementById('ksztalt').value;
+            if (nrksztaltu==1) {
+                document.getElementById('zamowienie').innerHTML=("to cukierek cytryna");
+            }else if(nrksztaltu==2){
+                document.getElementById('zamowienie').innerHTML=("to cukierek liść");
+            }else if(nrksztaltu==3){
+                document.getElementById('zamowienie').innerHTML=("to cukierek banan");
+            }else {
+                document.getElementById('zamowienie').innerHTML=("to cukierek inny");
+            }
+        }
+        function kolor() {
+            const first = document.getElementById('r').value;
+            const second = document.getElementById('g').value;
+            const third = document.getElementById('b').value;
+            document.getElementById('przycisk').style.backgroundColor=`rgb(${first},${second},${third})`;
+        }
+    </script>
+</head>
+<body>
+    <section class="gora">
+        <a href="zamowienie.html">Zamów cukierki</a>
+    </section>
+    <section class="gora">
+        <a href="index.html"><img src="logotyp.png"/></a> 
+    </section>
+    <section class="baner">
+        <h1>Strefa zamówień</h1>
+    </section>
+    <section class="main">
+        <span>Numerk kształtu:</span><br>
+        <input id="ksztalt" type="number"><br>
+        <span>Skomponuj swój kolor, podaj RGB:<br></span>
+         R: <input id="r" type="number"/> G: <input id="g" type="number"/> B: <input id="b" type="number"/><br>
+         <button onclick="wypisz()">Zamówienie</button>
+         <p>Twoje zamówienie</p>
+         <span id="zamowienie"></span><br>
+         <button id="przycisk" onclick="kolor()">Kolor</button>
+    </section>
+    <section class="main">
+        <h2>Nasza oferta</h2>
+        <table>
+            <tbody>
+                <tr><td>Kształty</td><td rowspan="2">Możesz zamowić<br>dowolny kolor cukierka</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ol>
+                            <li>cytryna</li>
+                            <li>liść</li>
+                            <li>banan</li>
+                        </ol>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <footer class="baner"><span>Autor strony:<b>12345678910</b></span></footer>
+</body>
+</html>
